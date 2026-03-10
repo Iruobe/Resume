@@ -261,7 +261,7 @@ function FloatingTechField() {
       onMouseLeave={handleMouseLeave}
     >
       <div className="tech-field-title">
-        <span>⌨</span> Technical Proficiencies
+         Technical Proficiencies
       </div>
 
       {TECH_SKILLS.map((skill, i) => {
@@ -312,7 +312,7 @@ function Skills() {
           <FloatingTechField />
 
           <div className="soft-skills-card">
-            <h3><span>🧠</span> Soft Skills</h3>
+            <h3> Soft Skills</h3>
             <div>
               {SOFT_SKILLS.map((s) => (
                 <span key={s} className="soft-chip">{s}</span>
