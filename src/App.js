@@ -1,30 +1,5 @@
-// import logo from './logo.svg';
-// import './App.css';
-
-// function App() {
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-//         <p>
-//           Edit <code>src/App.js</code> and save to reload.
-//         </p>
-//         <a
-//           className="App-link"
-//           href="https://reactjs.org"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           Learn React
-//         </a>
-//       </header>
-//     </div>
-//   );
-// }
-
-// export default App;
-
 import React, { useState, useEffect, useRef, useCallback } from 'react';
+import PlantItScreen from './PlantItScreen';
 import './App.css';
 
 /* ═══════════════════════════════════════════════════════════════════
@@ -392,14 +367,14 @@ function Projects() {
             <span className="live-card-arrow">→</span>
           </a>
 
-          <div className="live-card-disabled">
-            <div className="live-card-disabled-content">
+          <div className="live-grid">
+            <a href="/plant-it" className="live-card">
+            <div>
               <h4>Plant IT</h4>
-              <p>Eco-conscious tracking application.</p>
+              <p>AI-powered plant care application.</p>
             </div>
-            <div className="coming-soon-badge">
-              <span>COMING SOON</span>
-            </div>
+            <span className="live-card-arrow">→</span>
+            </a>
           </div>
         </div>
       </div>
@@ -571,6 +546,11 @@ function Footer() {
    APP ROOT
    ═══════════════════════════════════════════════════════════════════ */
 export default function App() {
+  // Check if URL path is /plant-it
+  if (window.location.pathname === '/plant-it') {
+    return <PlantItScreen />;
+  }
+
   return (
     <>
       <Navbar />
