@@ -6,26 +6,46 @@ import './App.css';
    SKILL ICONS — using Devicon CDN
    ═══════════════════════════════════════════════════════════════════ */
 const TECH_SKILLS = [
+  // Languages
   { name: 'Python',       icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg' },
   { name: 'JavaScript',   icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg' },
+  { name: 'TypeScript',   icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg' },
+  { name: 'C++',          icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg' },
+  { name: 'Java',         icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg' },
+  // Frameworks
   { name: 'React Native', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg' },
   { name: 'Next.js',      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg' },
-  { name: 'C++',          icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg' },
+  { name: 'FastAPI',      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastapi/fastapi-original.svg' },
+  { name: 'Angular',      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/angular/angular-original.svg' },
+  // Cloud & Infra
+  { name: 'AWS',          icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg' },
+  { name: 'Firebase',     icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/firebase/firebase-original.svg' },
+  { name: 'DynamoDB',     icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dynamodb/dynamodb-original.svg' },
+  { name: 'PostgreSQL',   icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg' },
+  // Testing & CI/CD
   { name: 'Postman',      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg' },
   { name: 'JUnit',        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/junit/junit-original.svg' },
   { name: 'Selenium',     icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/selenium/selenium-original.svg' },
   { name: 'Pytest',       icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pytest/pytest-original.svg' },
   { name: 'Jenkins',      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jenkins/jenkins-original.svg' },
+  { name: 'GitHub Actions',icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/githubactions/githubactions-original.svg' },
+  // Tools
   { name: 'Git',          icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg' },
   { name: 'Linux',        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg' },
 ];
 
 /* ── predefined positions for floating icons (% based) ─────────── */
 const POSITIONS = [
-  { x: 12, y: 22 }, { x: 55, y: 15 }, { x: 82, y: 28 },
-  { x: 25, y: 55 }, { x: 68, y: 48 }, { x: 8,  y: 78 },
-  { x: 45, y: 72 }, { x: 78, y: 70 }, { x: 35, y: 38 },
-  { x: 60, y: 85 }, { x: 18, y: 90 }, { x: 88, y: 55 },
+  // Row 1
+  { x: 8,  y: 12 }, { x: 30, y: 8  }, { x: 52, y: 14 }, { x: 75, y: 10 }, { x: 92, y: 16 },
+  // Row 2
+  { x: 14, y: 32 }, { x: 38, y: 28 }, { x: 62, y: 34 }, { x: 85, y: 30 },
+  // Row 3
+  { x: 6,  y: 50 }, { x: 28, y: 52 }, { x: 50, y: 48 }, { x: 72, y: 54 }, { x: 90, y: 50 },
+  // Row 4
+  { x: 16, y: 70 }, { x: 40, y: 68 }, { x: 60, y: 72 }, { x: 82, y: 68 },
+  // Row 5
+  { x: 10, y: 88 }, { x: 48, y: 86 }, { x: 74, y: 90 },
 ];
 
 /* ═══════════════════════════════════════════════════════════════════
@@ -135,23 +155,15 @@ function About() {
   return (
     <section className="about" id="about">
       <div className="about-inner scroll-reveal" ref={ref}>
-        <div className="about-image">
+        {/* <div className="about-image">
           <span className="about-image-placeholder">Coming Soon</span>
           <div className="about-image-accent" />
-        </div>
+        </div> */}
 
         <div className="about-text">
           <h2>About Me</h2>
           <p>
-            I am a motivated Software Engineering graduate with a focus on
-            building high-quality, scalable applications. My passion lies in
-            bridging the gap between elegant user experiences and robust,
-            well-tested backend logic.
-          </p>
-          <p>
-            With experience spanning web and mobile development, I leverage
-            tools like Jenkins and Selenium to ensure every line of code meets
-            industry standards for reliability and performance.
+            I'm a Software Engineering graduate who enjoys building things properly from the front end a user interacts with, to the infrastructure keeping it all running. I've shipped production applications, worked with cloud services, mobile apps, testing , and picked up a habit of not stopping until something actually works well.
           </p>
           {/* <div className="about-badge">
             <div className="about-badge-icon">✓</div>
@@ -265,11 +277,14 @@ function FloatingTechField() {
    SKILLS SECTION
    ═══════════════════════════════════════════════════════════════════ */
 const SOFT_SKILLS = [
+  'Problem-Solving & Debugging',
+  'Self-Directed Learning',
+  'Attention to Detail',
+  'Adaptability',
+  'Technical Documentation',
+  'Quality-Focused Development',
   'Team Collaboration',
   'Remote Communication',
-  'Analytical Debugging',
-  'Adaptability',
-  'Continuous Learner',
 ];
 
 function Skills() {
@@ -456,9 +471,7 @@ function Contact() {
         <div className="contact-info">
           <h2>Let's Connect</h2>
           <p>
-            I'm currently looking for new opportunities in Software Engineering
-            and QA Automation. Feel free to reach out for collaborations or just
-            a friendly tech chat.
+            I'm currently looking for new opportunities . Feel free to reach out for collaborations.
           </p>
 
           <div className="contact-link">
@@ -487,7 +500,7 @@ function Contact() {
           </div>
         </div>
 
-        <div className="contact-form">
+        {/* <div className="contact-form">
           <div className="contact-form-row">
             <div>
               <label>Name</label>
@@ -503,7 +516,7 @@ function Contact() {
             <textarea rows={4} placeholder="How can I help you?" />
           </div>
           <button className="btn-submit">Send Message</button>
-        </div>
+        </div> */}
       </div>
     </section>
   );
